@@ -4,9 +4,11 @@ const key = 've5VqNiYu5upxuvmRyZFB0bjrj0YFtDA'
 const getCity = async (city) => {
   const base = 'http://dataservice.accuweather.com/locations/v1/cities/search'
   const query = `?apikey=${key}&q=${city}`
+  console.log(query)
 
   const response = await fetch(`${base}${query}`).catch((e) => null)
   const data = await response.json()
+  console.log(data)
   return data[0]
 }
 
@@ -17,5 +19,6 @@ const getWeather = async (id) => {
 
   const response = await fetch(base + query)
   const data = await response.json()
+  console.log(data)
   return data[0]
 }
